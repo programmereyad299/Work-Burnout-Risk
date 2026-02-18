@@ -1,7 +1,7 @@
-import numpy as np
 import tensorflow as tf
-import streamlit as st
 import joblib
+import streamlit as st
+import numpy as np
 
 st.set_page_config(page_title = "Work Burnout Prediction" , page_icon="🗒️")
 st.title("Work Burnout Prediction 😵‍💫😩🗒️")
@@ -43,4 +43,5 @@ if btn :
     pred = model.predict(input_data)
     pred = np.argmax(pred)  
     pred = ley.inverse_transform([pred])[0]
+
     st.sidebar.info(pred)
